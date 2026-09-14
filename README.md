@@ -205,6 +205,7 @@ For example:
 
 ```jsx
 <h1>Hello React</h1>
+```
 
 JSX is not directly understood by the browser. It is transformed into JavaScript before the application runs.
 
