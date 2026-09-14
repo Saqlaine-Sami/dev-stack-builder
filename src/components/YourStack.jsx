@@ -8,8 +8,8 @@ const YourStack = ({ stack, onRemove, onRemoveAll }) => {
         <p className="mt-1 text-sm text-slate-400">
           {stack.length === 0
             ? "No technologies selected yet."
-            : `${stack.length} Technology${
-                stack.length > 1 ? "ies" : "y"
+            : `${stack.length} ${
+                stack.length === 1 ? "Technology" : "Technologies"
               } Selected`}
         </p>
       </div>
