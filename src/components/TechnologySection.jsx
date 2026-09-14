@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import TechnologyCard from "./TechnologyCard";
+import YourStack from "./YourStack";
 
-const TechnologySection = ({ onAdd, stack }) => {
+const TechnologySection = ({ onAdd, onRemove, onRemoveAll, stack }) => {
   const [technologies, setTechnologies] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,7 +43,7 @@ const TechnologySection = ({ onAdd, stack }) => {
         </p>
       </div>
 
-      {/* Loading State */}
+      {/* Loading */}
       {loading ? (
         <div className="flex min-h-[300px] items-center justify-center">
           <div className="flex items-center gap-3 text-slate-500">
@@ -51,15 +52,25 @@ const TechnologySection = ({ onAdd, stack }) => {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {technologies.map((technology) => (
-            <TechnologyCard
-              key={technology.id}
-              technology={technology}
-              onAdd={onAdd}
-              isAdded={stack.some((item) => item.id === technology.id)}
-            />
-          ))}
+        <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,3fr)_280px]">
+          {/* Technology Cards */}
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {technologies.map((technology) => (
+              <TechnologyCard
+                key={technology.id}
+                technology={technology}
+                onAdd={onAdd}
+                isAdded={stack.some((item) => item.id === technology.id)}
+              />
+            ))}
+          </div>
+
+          {/* Your Stack */}
+          <YourStack
+            stack={stack}
+            onRemove={onRemove}
+            onRemoveAll={onRemoveAll}
+          />
         </div>
       )}
     </section>
