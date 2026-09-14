@@ -1,17 +1,13 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
     <>
       <Navbar />
 
-      <main className="min-h-screen">
-        <section
-          id="home"
-          className="flex min-h-[600px] items-center justify-center"
-        >
-          <h1 className="text-4xl font-bold">Dev Stack Builder</h1>
-        </section>
+      <main>
+        <Hero />
 
         <section
           id="technologies"
