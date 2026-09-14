@@ -87,7 +87,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <button
             type="button"
-            className="hidden px-3 py-2 text-sm font-medium text-slate-600 transition hover:text-pink-500 sm:block"
+            className="px-2 py-2 text-xs font-medium text-slate-600 transition hover:text-pink-500 sm:px-3 sm:text-sm"
           >
             Sign In
           </button>
